@@ -1,0 +1,114 @@
+.intoContainer {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  span {
+    color: 	var(--teal);
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    a, button {
+      font-weight: 500;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+    }
+
+    button {
+      background: transparent;
+      border: 1px solid var(--purple);
+      color: var(--purple);
+
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        background: var(--purple);
+        color: var(--background-color);
+      }
+    }
+
+    a {
+      background: var(--purple);
+      color: var(--background-color);
+    }
+  }
+}
+
+
+.imgContainer {
+  position: relative;
+
+
+  // border: 5px solid orange;
+}
+
+.box {
+  padding: 1rem 2rem;
+  background-color: var(--purple);
+  border-radius: 2rem;
+  position: absolute;
+
+  font-weight: 600;
+  color: var(--background-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.react {
+  top: 0;
+  left: -50%;
+}
+
+.javascript {
+  top: 0;
+  right: -60%;
+}
+
+.css {
+  bottom: 5rem;
+  right: -60%;
+}
+
+.html {
+  bottom: 5rem;
+  left: -60%;
+}
+
+.imgContent {
+  width: 350px;
+
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+  font-size: 0;
+
+  background-image: linear-gradient(to bottom, var(--purple), transparent);
+
+  img {
+    position: relative;
+  }
+}
+
+
