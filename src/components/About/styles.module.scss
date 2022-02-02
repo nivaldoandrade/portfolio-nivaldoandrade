@@ -1,0 +1,42 @@
+.aboutContainer {
+  margin: 5rem 0;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--purple);
+    margin-bottom: 6rem;
+  }
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.info {
+  margin-top: auto;
+
+
+  p {
+    color: var(--text-color);
+  }
+}
+
+
+
+
