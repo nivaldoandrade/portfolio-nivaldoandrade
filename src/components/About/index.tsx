@@ -12,8 +12,8 @@ export function About() {
       <div className={styles.aboutContent}>
         <div className={styles.infoContainer}>
           <div className={styles.cards}>
-            <Card title="LinkedIn" Icon={BsLinkedin} />
-            <Card title="GitHub" Icon={BsGithub} />
+            <Card title="LinkedIn" icon={BsLinkedin} />
+            <Card title="GitHub" icon={BsGithub} />
           </div>
           <div className={styles.info}>
             <p>

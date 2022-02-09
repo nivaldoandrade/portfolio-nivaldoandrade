@@ -1,4 +1,5 @@
 import { About } from '../components/About';
+import { Contact } from '../components/Contact';
 import { Into } from '../components/Into';
 import { Portfolio } from '../components/Portfolio';
 
@@ -11,6 +12,7 @@ export default function Home() {
       <main className={styles.mainContainer}>
         <About />
         <Portfolio />
+        <Contact />
       </main>
     </>
   );

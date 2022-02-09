@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
 
@@ -9,10 +10,26 @@ import javascriptImg from '../../../public/images/javascript.svg';
 import htmlImg from '../../../public/images/html.svg';
 import cssImg from '../../../public/images/css3.svg';
 
+const transitionBox = {
+  type: 'tween',
+  ease: 'easeInOut',
+  delay: 0.3,
+  duration: 1,
+};
+
 export function Into() {
   return (
     <section className={styles.intoContainer}>
-      <div className={styles.info}>
+      <motion.div
+        className={styles.info}
+        initial={{ opacity: 0 }}
+        animate={{ y: ['-30px', '30px', '0px'], opacity: 1 }}
+        transition={{
+          type: 'tween',
+          ease: 'easeInOut',
+          duration: 1,
+        }}
+      >
         <strong>Olá, Eu sou</strong>
         <h1>Nivaldo Andrade</h1>
         <span>Desenvolvedor Frontend</span>
@@ -22,28 +39,89 @@ export function Into() {
             <a>Sobre mim</a>
           </Link>
         </div>
-      </div>
+      </motion.div>
       <div className={styles.imgContainer}>
-        <div className={`${styles.box} ${styles.react}`}>
+        <motion.div
+          className={`${styles.box} ${styles.react}`}
+          initial={{
+            x: -20,
+            y: -10,
+            opacity: 0,
+          }}
+          animate={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={transitionBox}
+        >
           <Image src={reactImg} alt="React" width={30} height={30} />
           ReactJS
-        </div>
-        <div className={`${styles.box} ${styles.javascript}`}>
+        </motion.div>
+        <motion.div
+          className={`${styles.box} ${styles.javascript}`}
+          initial={{
+            x: 20,
+            y: -10,
+            opacity: 0,
+          }}
+          animate={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={transitionBox}
+        >
           <Image src={javascriptImg} alt="React" width={30} height={30} />
           JavaScript
-        </div>
-        <div className={`${styles.box} ${styles.html}`}>
+        </motion.div>
+        <motion.div
+          className={`${styles.box} ${styles.html}`}
+          initial={{
+            x: -20,
+            y: 10,
+            opacity: 0,
+          }}
+          animate={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={transitionBox}
+        >
           <Image src={htmlImg} alt="React" width={35} height={35} />
           HTML
-        </div>
-        <div className={`${styles.box} ${styles.css}`}>
+        </motion.div>
+        <motion.div
+          className={`${styles.box} ${styles.css}`}
+          initial={{
+            x: 20,
+            y: 10,
+            opacity: 0,
+          }}
+          animate={{
+            x: 0,
+            y: 0,
+            opacity: 1,
+          }}
+          transition={transitionBox}
+        >
           <Image src={cssImg} alt="React" width={35} height={35} />
           CSS3
-        </div>
+        </motion.div>
 
-        <div className={styles.imgContent}>
+        <motion.div
+          className={styles.imgContent}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: 'tween',
+            duration: 1,
+            delay: 0.3,
+          }}
+        >
           <Image src={meImg} alt="Nivaldo Andrade" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

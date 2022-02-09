@@ -1,0 +1,21 @@
+.link {
+  display: flex;
+  align-items: center;
+  color: var(--purple);
+
+
+  @keyframes go-back {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(10px);
+    }
+  }
+
+  &:hover {
+      svg {
+        animation: go-back 500ms infinite alternate;
+      }
+  }
+}

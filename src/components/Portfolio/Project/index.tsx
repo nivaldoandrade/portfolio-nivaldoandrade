@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { BiRightArrowAlt } from 'react-icons/bi';
+
+import { LinkArrow } from '../../LinkArrow';
 
 import styles from './styles.module.scss';
 
@@ -17,12 +17,7 @@ export function Project({ title, image }: ProjectProps) {
       </div>
       <div className={styles.projectInfoContent}>
         <strong>{title}</strong>
-        <Link href="#">
-          <a>
-            Demo
-            <BiRightArrowAlt size={20} />
-          </a>
-        </Link>
+        <LinkArrow link="#">Demo</LinkArrow>
       </div>
     </div>
   );
