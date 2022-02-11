@@ -57,9 +57,7 @@
 
 .imgContainer {
   position: relative;
-
-
-  // border: 5px solid orange;
+  width: 100%;
 }
 
 .box {
@@ -79,38 +77,36 @@
 
 .react {
   top: 0;
-  left: -50%;
+  left: 0;
 }
 
 .javascript {
   top: 0;
-  right: -60%;
+  right: 0;
 }
 
 .css {
   bottom: 5rem;
-  right: -60%;
+  right: 0;
 }
 
 .html {
   bottom: 5rem;
-  left: -60%;
+  left: 0;
 }
 
 .imgContent {
-  width: 350px;
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
 
   border-top-left-radius: 40%;
   border-top-right-radius: 40%;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
+
   font-size: 0;
 
-  background-image: linear-gradient(to bottom, var(--purple), transparent);
-
-  img {
-    position: relative;
-  }
+  background-image: linear-gradient(to bottom, var(--purple) , transparent);
 }
 
 

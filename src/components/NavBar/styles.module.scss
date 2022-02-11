@@ -1,7 +1,7 @@
 .navContainer {
   z-index: 1;
   position: fixed;
-  bottom: 1rem;
+  bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
 
@@ -16,6 +16,13 @@
   backdrop-filter: blur(10px);
   --webkit-backdrop-filter: blur(10px);
   border-radius: 2rem;
+
+  transition: all 200ms linear;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
 
   a {
     font-size: 0;

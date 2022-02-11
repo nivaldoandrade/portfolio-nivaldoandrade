@@ -120,7 +120,7 @@ export function Into() {
             delay: 0.3,
           }}
         >
-          <Image src={meImg} alt="Nivaldo Andrade" />
+          <Image src={meImg} layout="fill" alt="Nivaldo Andrade" />
         </motion.div>
       </div>
     </section>

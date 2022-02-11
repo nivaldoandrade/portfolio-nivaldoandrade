@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <Into />
       <main className={styles.mainContainer}>
+        <Into />
         <About />
         <Portfolio />
         <Contact />

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import {
   BiHome,
   BiUser,
@@ -9,8 +10,32 @@ import {
 import styles from './styles.module.scss';
 
 export function NavBar() {
+  const [showNavBar, setShowNavBar] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setShowNavBar(true);
+    } else {
+      setShowNavBar(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, true);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  }, []);
+
   return (
-    <nav className={styles.navContainer}>
+    <nav
+      className={
+        showNavBar
+          ? styles.navContainer
+          : `${styles.navContainer} ${styles.hidden}`
+      }
+    >
       <Link href="#">
         <a>
           <BiHome size={24} />
