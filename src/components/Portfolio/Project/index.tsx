@@ -16,7 +16,14 @@ export function Project({ title, image }: ProjectProps) {
         <Image src={image} layout="fill" objectFit="cover" alt="work1" />
       </div>
       <div className={styles.projectInfoContent}>
-        <strong>{title}</strong>
+        <div>
+          <strong>{title}</strong>
+          <span>REACTJS</span>
+        </div>
+        <p>
+          loEt sunt laborum consectetur officia magna eiusmod incididunt. Eu
+          consectetur voluptate dolore deserunt nulla deserunt.
+        </p>
         <LinkArrow link="#">Demo</LinkArrow>
       </div>
     </div>

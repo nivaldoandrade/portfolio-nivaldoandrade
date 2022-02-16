@@ -26,11 +26,11 @@ export function About() {
         </div>
         <div className={styles.skillContainer}>
           <SkillItem title="HTML" percentage={85} />
-          <SkillItem title="CSS" percentage={85} delay={0.3} />
-          <SkillItem title="JAVASCRIPT" percentage={85} delay={0.6} />
-          <SkillItem title="REACTJS" percentage={80} delay={0.9} />
-          <SkillItem title="REACT NATIVE" percentage={70} delay={1.2} />
-          <SkillItem title="NODE.JS" percentage={60} delay={1.5} />
+          <SkillItem title="CSS" percentage={85} />
+          <SkillItem title="JAVASCRIPT" percentage={85} />
+          <SkillItem title="REACTJS" percentage={80} />
+          <SkillItem title="REACT NATIVE" percentage={70} />
+          <SkillItem title="NODE.JS" percentage={60} />
         </div>
       </div>
     </section>
