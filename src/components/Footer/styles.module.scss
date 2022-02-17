@@ -1,0 +1,36 @@
+.footerContainer {
+  // max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--purple);
+  // background-image: linear-gradient(to top, var(--purple), 80%,  var(--blue));
+  padding: 2rem 0 7rem 0;
+  color: var(--background-color);
+
+  strong {
+    font-size: 2.5rem;
+  }
+
+  span {
+    font-weight: 500;
+  }
+}
+
+.socialMediaContent {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+
+  a {
+    font-size: 0;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+
+    svg {
+      color: var(--purple);
+    }
+  }
+}

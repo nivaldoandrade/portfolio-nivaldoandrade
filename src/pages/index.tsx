@@ -1,5 +1,6 @@
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
+import { Footer } from '../components/Footer';
 import { Into } from '../components/Into';
 import { NavBar } from '../components/NavBar';
 import { Portfolio } from '../components/Portfolio';
@@ -16,6 +17,7 @@ export default function Home() {
         <Portfolio />
         <Contact />
       </main>
+      <Footer />
     </>
   );
 }
