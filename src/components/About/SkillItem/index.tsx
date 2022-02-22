@@ -25,7 +25,6 @@ export function SkillItem({ title, percentage }: SkillItemProps) {
         return;
       }
       const delay = (duration / percentage) * 1000;
-      console.log(delay);
 
       timer = setInterval(() => {
         setCounter(state => state + 1);

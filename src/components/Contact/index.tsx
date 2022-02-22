@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 
 export function Contact() {
   return (
-    <section className={styles.contactContainer}>
+    <section className={styles.contactContainer} id="contact">
       <span>Get in touch</span>
       <h1>Contact Me</h1>
       <div className={styles.contactContent}>

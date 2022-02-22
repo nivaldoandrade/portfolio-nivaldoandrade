@@ -7,7 +7,7 @@ import { Project } from './Project';
 
 export function Portfolio() {
   return (
-    <section className={styles.portfolioContainer}>
+    <section className={styles.portfolioContainer} id="portfolio">
       <span>My portfolio</span>
       <h1>Recent Works</h1>
       <div className={styles.projects}>

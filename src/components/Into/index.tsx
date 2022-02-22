@@ -19,7 +19,7 @@ const transitionBox = {
 
 export function Into() {
   return (
-    <section className={styles.intoContainer}>
+    <section className={styles.intoContainer} id="into">
       <motion.div
         className={styles.info}
         initial={{ opacity: 0 }}

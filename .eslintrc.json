@@ -53,7 +53,8 @@
      "react/no-unescaped-entities": "off",
      "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "no-unused-expressions": "off"
     },
     "settings": {
       "import/resolver": {

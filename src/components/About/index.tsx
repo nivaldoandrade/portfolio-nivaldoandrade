@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 
 export function About() {
   return (
-    <section className={styles.aboutContainer}>
+    <section className={styles.aboutContainer} id="about">
       <h1>Sobre Mim</h1>
       <div className={styles.aboutContent}>
         <div className={styles.infoContainer}>

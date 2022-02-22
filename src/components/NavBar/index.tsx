@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import {
   BiHome,
@@ -6,11 +5,13 @@ import {
   BiBriefcase,
   BiMessageAltDetail,
 } from 'react-icons/bi';
+import * as Scroll from 'react-scroll';
 
 import styles from './styles.module.scss';
 
 export function NavBar() {
   const [showNavBar, setShowNavBar] = useState(false);
+  const { Link } = Scroll;
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -36,25 +37,18 @@ export function NavBar() {
           : `${styles.navContainer} ${styles.hidden}`
       }
     >
-      <Link href="#">
-        <a>
-          <BiHome size={24} />
-        </a>
+      <Link to="into" spy activeClass={styles.active} smooth>
+        <BiHome size={24} />
       </Link>
-      <Link href="#">
-        <a>
-          <BiUser size={24} />
-        </a>
+
+      <Link to="about" spy activeClass={styles.active} smooth>
+        <BiUser size={24} />
       </Link>
-      <Link href="#">
-        <a className={styles.active}>
-          <BiBriefcase size={24} />
-        </a>
+      <Link to="portfolio" spy activeClass={styles.active} smooth>
+        <BiBriefcase size={24} />
       </Link>
-      <Link href="#">
-        <a>
-          <BiMessageAltDetail size={24} />
-        </a>
+      <Link to="contact" spy activeClass={styles.active} smooth>
+        <BiMessageAltDetail size={24} />
       </Link>
     </nav>
   );
