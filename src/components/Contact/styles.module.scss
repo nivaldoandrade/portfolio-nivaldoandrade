@@ -1,6 +1,4 @@
 .contactContainer {
-  margin-bottom: 5rem;
-
   h1, span {
     text-align: center;
   }
@@ -19,6 +17,7 @@
 }
 
 .contactContent {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem;

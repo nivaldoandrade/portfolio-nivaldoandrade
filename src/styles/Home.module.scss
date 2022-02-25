@@ -3,4 +3,14 @@
   max-width: 980px;
   margin: 0 auto;
   padding: 0 1rem;
+
+  >section {
+    & + section {
+      margin-top: 10rem;
+    }
+
+    &:last-child {
+      margin-bottom: 10rem;
+    }
+  }
 }
