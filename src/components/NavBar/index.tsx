@@ -5,13 +5,13 @@ import {
   BiBriefcase,
   BiMessageAltDetail,
 } from 'react-icons/bi';
-import * as Scroll from 'react-scroll';
+
+import { ActiveLink } from './ActiveLink';
 
 import styles from './styles.module.scss';
 
 export function NavBar() {
   const [showNavBar, setShowNavBar] = useState(false);
-  const { Link } = Scroll;
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -37,19 +37,18 @@ export function NavBar() {
           : `${styles.navContainer} ${styles.hidden}`
       }
     >
-      <Link to="into" spy activeClass={styles.active} smooth>
+      <ActiveLink to="into" activeClass={styles.active}>
         <BiHome size={24} />
-      </Link>
-
-      <Link to="about" spy activeClass={styles.active} smooth>
+      </ActiveLink>
+      <ActiveLink to="about" activeClass={styles.active}>
         <BiUser size={24} />
-      </Link>
-      <Link to="portfolio" spy activeClass={styles.active} smooth>
+      </ActiveLink>
+      <ActiveLink to="portfolio" activeClass={styles.active}>
         <BiBriefcase size={24} />
-      </Link>
-      <Link to="contact" spy activeClass={styles.active} smooth>
+      </ActiveLink>
+      <ActiveLink to="contact" activeClass={styles.active}>
         <BiMessageAltDetail size={24} />
-      </Link>
+      </ActiveLink>
     </nav>
   );
 }
