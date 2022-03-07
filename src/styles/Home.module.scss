@@ -6,11 +6,11 @@
 
   >section {
     & + section {
-      margin-top: 10rem;
+      padding-top: 8rem;
     }
 
     &:last-child {
-      margin-bottom: 10rem;
+      padding-bottom: 8rem;
     }
   }
 }

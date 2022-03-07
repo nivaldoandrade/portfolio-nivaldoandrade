@@ -8,7 +8,7 @@ interface ActiveLinkProps {
 
 export function ActiveLink({ to, activeClass, children }: ActiveLinkProps) {
   return (
-    <Link to={to} activeClass={activeClass} spy smooth offset={-50}>
+    <Link to={to} activeClass={activeClass} spy smooth offset={50}>
       {children}
     </Link>
   );
