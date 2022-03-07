@@ -12,7 +12,7 @@
 
 .aboutContent {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   gap: 3rem;
 }
 
@@ -38,5 +38,23 @@
 }
 
 
+@media (max-width: 669px) {
+  .infoContainer {
+    gap: 2rem;
+  }
+
+  .info {
+    text-align: center;
+  }
+
+
+  .aboutContent {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 375px) {
+
+}
 
 

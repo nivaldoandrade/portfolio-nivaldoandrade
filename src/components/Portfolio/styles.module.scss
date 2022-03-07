@@ -24,4 +24,16 @@
   gap: 3rem;
 }
 
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(346px, 1fr));
+  }
+}
+
+@media (max-width: 375px) {
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+  }
+}
+
 

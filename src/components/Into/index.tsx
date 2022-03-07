@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
@@ -35,7 +35,7 @@ export function Into() {
         <span>Desenvolvedor Frontend</span>
         <div>
           <button type="button">Download CV</button>
-          <Link href="#">
+          <Link to="about" smooth offset={-50}>
             <a>Sobre mim</a>
           </Link>
         </div>
@@ -120,7 +120,12 @@ export function Into() {
             delay: 0.3,
           }}
         >
-          <Image src={meImg} layout="fill" alt="Nivaldo Andrade" />
+          <Image
+            src={meImg}
+            layout="fill"
+            alt="Nivaldo Andrade"
+            objectFit="cover"
+          />
         </motion.div>
       </div>
     </section>

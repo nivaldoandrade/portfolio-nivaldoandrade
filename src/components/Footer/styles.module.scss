@@ -1,12 +1,11 @@
 .footerContainer {
-  // max-width: 980px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--purple);
-  // background-image: linear-gradient(to top, var(--purple), 80%,  var(--blue));
   padding: 2rem 0 7rem 0;
   color: var(--background-color);
+  text-align: center;
 
   strong {
     font-size: 2.5rem;
@@ -31,6 +30,15 @@
 
     svg {
       color: var(--purple);
+    }
+  }
+}
+
+
+@media (max-width: 425px) {
+  .footerContainer {
+    strong {
+      font-size: 2rem;
     }
   }
 }

@@ -48,6 +48,7 @@
     }
 
     a {
+      cursor: pointer;
       background: var(--purple);
       color: var(--background-color);
     }
@@ -97,8 +98,8 @@
 
 .imgContent {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 28.12rem;
+  height: 28.12rem;
   margin: 0 auto;
 
   border-top-left-radius: 40%;
@@ -107,6 +108,48 @@
   font-size: 0;
 
   background-image: linear-gradient(to bottom, var(--purple) , transparent);
+}
+
+@media (max-width: 1024px) {
+  .box {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .info {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .imgContent {
+    width: 22rem;
+    // height: 22rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .info {
+    h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  .imgContent {
+    width: 21rem;
+    // height: 21rem;
+  }
+}
+
+@media (max-height: 568px) {
+  .info {
+    margin-bottom: 2rem;
+  }
+
+  .imgContent {
+    height: 19rem;
+  }
 }
 
 

@@ -32,9 +32,9 @@ export function NavBar() {
   return (
     <nav
       className={
-        showNavBar
-          ? styles.navContainer
-          : `${styles.navContainer} ${styles.hidden}`
+        !showNavBar
+          ? `${styles.navContainer} ${styles.hidden}`
+          : styles.navContainer
       }
     >
       <ActiveLink to="into" activeClass={styles.active}>
