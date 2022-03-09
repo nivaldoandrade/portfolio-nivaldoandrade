@@ -9,13 +9,13 @@ export function Footer() {
       <strong>Nivaldo Andrade</strong>
       <span>Um pequeno aprendiz nesse grande mundo da programação!!</span>
       <div className={styles.socialMediaContent}>
-        <Link href="#">
-          <a>
+        <Link href="https://www.linkedin.com/in/nivaldo-andrade/">
+          <a target="_blank">
             <BsLinkedin size={20} />
           </a>
         </Link>
-        <Link href="#">
-          <a>
+        <Link href="https://github.com/nivaldoandrade">
+          <a target="_blank">
             <BsGithub size={20} />
           </a>
         </Link>

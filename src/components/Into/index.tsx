@@ -34,7 +34,14 @@ export function Into() {
         <h1>Nivaldo Andrade</h1>
         <span>Desenvolvedor Frontend</span>
         <div>
-          <button type="button">Download CV</button>
+          <a
+            href="/files/nivaldo-andrade.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            // download
+          >
+            Download CV
+          </a>
           <Link to="about" smooth offset={-50}>
             <a>Sobre mim</a>
           </Link>

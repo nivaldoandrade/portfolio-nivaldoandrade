@@ -28,13 +28,13 @@
     gap: 1rem;
     margin-top: 2rem;
 
-    a, button {
+    a {
       font-weight: 500;
       padding: 0.75rem;
       border-radius: 0.5rem;
     }
 
-    button {
+    > a:first-child {
       background: transparent;
       border: 1px solid var(--purple);
       color: var(--purple);
