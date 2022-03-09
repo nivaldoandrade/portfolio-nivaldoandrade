@@ -8,20 +8,31 @@ import styles from './styles.module.scss';
 export function About() {
   return (
     <section className={styles.aboutContainer} id="about">
+      <span>Breve resumo</span>
       <h1>Sobre Mim</h1>
       <div className={styles.aboutContent}>
         <div className={styles.infoContainer}>
           <div className={styles.cards}>
-            <Card title="LinkedIn" icon={BsLinkedin} />
-            <Card title="GitHub" icon={BsGithub} />
+            <Card
+              title="LinkedIn"
+              icon={BsLinkedin}
+              href="https://www.linkedin.com/in/nivaldo-andrade/"
+            />
+            <Card
+              title="GitHub"
+              icon={BsGithub}
+              href="https://github.com/nivaldoandrade"
+            />
           </div>
           <div className={styles.info}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Sou Nivaldo Andrade, entusiasta por desenvolvimento front end e
+              mobile orientado por resultados, totalmente comprometido em criar
+              aplicações inovadores e funcionais.
             </p>
+            <strong>
+              Um pequeno aprendiz nesse grande mundo da programação!!
+            </strong>
           </div>
         </div>
         <div className={styles.skillContainer}>
