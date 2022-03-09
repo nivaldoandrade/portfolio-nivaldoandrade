@@ -1,5 +1,7 @@
 import { BiMailSend } from 'react-icons/bi';
-import { FaFacebookMessenger, FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
+import { BsLinkedin } from 'react-icons/bs';
+
 import { Card } from './Card';
 
 import styles from './styles.module.scss';
@@ -7,46 +9,46 @@ import styles from './styles.module.scss';
 export function Contact() {
   return (
     <section className={styles.contactContainer} id="contact">
-      <span>Get in touch</span>
-      <h1>Contact Me</h1>
+      <span>Entre em</span>
+      <h1>Contato</h1>
       <div className={styles.contactContent}>
         <div className={styles.talkToMeContent}>
-          <h2>Talk to me</h2>
+          <h2>Diga Olá</h2>
           <Card
             title="Email"
-            subtitle="user@gmail.com"
+            subtitle="nivaldoandradef@gmail.com"
             icon={BiMailSend}
-            link="#"
+            link="mailto:nivaldoandradef@gmail.com"
           />
           <Card
             title="Whatsapp"
-            subtitle="999-888-777"
+            subtitle="+55 11 98478 4784"
             icon={FaWhatsapp}
-            link="#"
+            link="tel:+5511984784284"
           />
           <Card
-            title="Message"
-            subtitle="user.fb123"
-            icon={FaFacebookMessenger}
-            link="#"
+            title="LinkedIn"
+            subtitle="nivaldo-andrade"
+            icon={BsLinkedin}
+            link="https://www.linkedin.com/in/nivaldo-andrade/"
           />
         </div>
         <div className={styles.formContent}>
-          <h2>Send me a message</h2>
+          <h2>Fale Comigo</h2>
           <form>
             <div className={styles.input}>
-              <label htmlFor="name">Names</label>
-              <input type="text" placeholder="Insert your name" id="name" />
+              <label htmlFor="name">Nome</label>
+              <input type="text" placeholder="Insira seu nome" id="name" />
             </div>
             <div className={styles.input}>
-              <label htmlFor="email">Mail</label>
-              <input type="text" placeholder="Insert your email" id="email" />
+              <label htmlFor="email">Email</label>
+              <input type="text" placeholder="Insira seu email" id="email" />
             </div>
             <div className={styles.input}>
-              <label htmlFor="project">Project</label>
-              <textarea placeholder="White your project" id="project" />
+              <label htmlFor="project">Mensagem</label>
+              <textarea placeholder="Escreva sua mensagem" id="project" />
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit">Enviar Mensagem</button>
           </form>
         </div>
       </div>

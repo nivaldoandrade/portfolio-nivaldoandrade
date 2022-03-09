@@ -16,7 +16,7 @@ export function Card({ title, icon: Icon, subtitle, link }: CardProps) {
       <Icon size={36} />
       <strong>{title}</strong>
       <span>{subtitle}</span>
-      <LinkArrow link={link}>Write me</LinkArrow>
+      <LinkArrow link={link}>Contato-me</LinkArrow>
     </div>
   );
 }
