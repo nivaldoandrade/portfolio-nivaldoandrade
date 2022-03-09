@@ -37,7 +37,7 @@ export function NavBar() {
           : styles.navContainer
       }
     >
-      <ActiveLink to="into" activeClass={styles.active}>
+      <ActiveLink to="into" activeClass={styles.active} into>
         <BiHome size={24} />
       </ActiveLink>
       <ActiveLink to="about" activeClass={styles.active}>
