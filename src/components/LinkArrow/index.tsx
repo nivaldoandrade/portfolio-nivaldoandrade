@@ -11,7 +11,7 @@ interface LinkArrowProps {
 export function LinkArrow({ children, link }: LinkArrowProps) {
   return (
     <Link href={link}>
-      <a className={styles.link}>
+      <a className={styles.link} target="_blank">
         {children}
         <BiRightArrowAlt size={20} />
       </a>
