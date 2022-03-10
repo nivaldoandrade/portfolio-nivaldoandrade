@@ -42,7 +42,7 @@ export function Into() {
           >
             Download CV
           </a>
-          <Link to="about" smooth offset={-50}>
+          <Link href="about" to="about" smooth offset={-50}>
             Sobre mim
           </Link>
         </div>

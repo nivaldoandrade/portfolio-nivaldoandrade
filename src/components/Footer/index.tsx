@@ -10,12 +10,12 @@ export function Footer() {
       <span>Um pequeno aprendiz nesse grande mundo da programação!!</span>
       <div className={styles.socialMediaContent}>
         <Link href="https://www.linkedin.com/in/nivaldo-andrade/">
-          <a target="_blank">
+          <a target="_blank" aria-label="Linkedin">
             <BsLinkedin size={20} />
           </a>
         </Link>
         <Link href="https://github.com/nivaldoandrade">
-          <a target="_blank">
+          <a target="_blank" aria-label="Github">
             <BsGithub size={20} />
           </a>
         </Link>

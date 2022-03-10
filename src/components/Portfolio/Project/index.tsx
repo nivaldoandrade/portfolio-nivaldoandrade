@@ -39,7 +39,7 @@ export function Project({
         <LinkArrow link={link}>Demo</LinkArrow>
         {github && (
           <Link href={github}>
-            <a target="_blank">
+            <a target="_blank" aria-label="Github">
               <BsGithub size={24} />
             </a>
           </Link>

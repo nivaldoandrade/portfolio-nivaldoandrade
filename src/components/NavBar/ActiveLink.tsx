@@ -14,7 +14,15 @@ export function ActiveLink({
   into,
 }: ActiveLinkProps) {
   return (
-    <Link to={to} activeClass={activeClass} spy smooth offset={into ? 0 : 50}>
+    <Link
+      aria-label={to}
+      href={to}
+      to={to}
+      activeClass={activeClass}
+      spy
+      smooth
+      offset={into ? 0 : 50}
+    >
       {children}
     </Link>
   );

@@ -32,21 +32,16 @@ export function Contact() {
           data,
           process.env.NEXT_PUBLIC_EMAILJS_USERID,
         )
-        .then(
-          ({ status }) => {
-            if (status === 200) {
-              setName('');
-              setEmail('');
-              setMessage('');
-              setFormSubmitted({ title: 'Enviado' });
-            } else {
-              setFormSubmitted({ title: '' });
-            }
-          },
-          err => {
-            console.log(err);
-          },
-        );
+        .then(({ status }) => {
+          if (status === 200) {
+            setName('');
+            setEmail('');
+            setMessage('');
+            setFormSubmitted({ title: 'Enviado' });
+          } else {
+            setFormSubmitted({ title: '' });
+          }
+        });
     },
     [name, email, message, setFormSubmitted],
   );
