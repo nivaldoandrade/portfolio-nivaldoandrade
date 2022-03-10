@@ -152,4 +152,16 @@
   }
 }
 
+@media (orientation: landscape)
+and (max-device-height: 600px) {
+  .intoContainer {
+    justify-content: center !important;
+  }
+
+  .imgContainer {
+    display: none;
+    visibility: hidden;
+  }
+}
+
 
