@@ -132,6 +132,7 @@ export function Into() {
             layout="fill"
             alt="Nivaldo Andrade"
             objectFit="cover"
+            priority
           />
         </motion.div>
       </div>
