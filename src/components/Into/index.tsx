@@ -43,7 +43,7 @@ export function Into() {
             Download CV
           </a>
           <Link to="about" smooth offset={-50}>
-            <a>Sobre mim</a>
+            Sobre mim
           </Link>
         </div>
       </motion.div>
