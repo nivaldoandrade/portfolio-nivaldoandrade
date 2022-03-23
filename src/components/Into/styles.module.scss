@@ -61,41 +61,6 @@
   width: 100%;
 }
 
-.box {
-  padding: 1rem 2rem;
-  background-color: var(--purple);
-  border-radius: 2rem;
-  position: absolute;
-
-  font-weight: 600;
-  color: var(--background-color);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.react {
-  top: 0;
-  left: 0;
-}
-
-.javascript {
-  top: 0;
-  right: 0;
-}
-
-.css {
-  bottom: 5rem;
-  right: 0;
-}
-
-.html {
-  bottom: 5rem;
-  left: 0;
-}
-
 .imgContent {
   position: relative;
   width: 28.12rem;
@@ -108,12 +73,6 @@
   font-size: 0;
 
   background-image: linear-gradient(to bottom, var(--purple) , transparent);
-}
-
-@media (max-width: 1024px) {
-  .box {
-    display: none;
-  }
 }
 
 @media (max-width: 425px) {

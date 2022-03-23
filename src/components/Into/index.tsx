@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 
-import styles from './styles.module.scss';
+import { IntoComponentProps } from '../../types/prismic';
 
 import meImg from '../../../public/images/me.png';
 import reactImg from '../../../public/images/react.svg';
@@ -10,14 +10,14 @@ import javascriptImg from '../../../public/images/javascript.svg';
 import htmlImg from '../../../public/images/html.svg';
 import cssImg from '../../../public/images/css3.svg';
 
-const transitionBox = {
-  type: 'tween',
-  ease: 'easeInOut',
-  delay: 0.3,
-  duration: 1,
-};
+import styles from './styles.module.scss';
+import { CardTech } from './CardTech';
 
-export function Into() {
+interface IntoProps {
+  data: IntoComponentProps;
+}
+
+export function Into({ data }: IntoProps) {
   return (
     <section className={styles.intoContainer} id="into">
       <motion.div
@@ -30,16 +30,11 @@ export function Into() {
           duration: 1,
         }}
       >
-        <strong>Olá, Eu sou</strong>
-        <h1>Nivaldo Andrade</h1>
-        <span>Desenvolvedor Frontend</span>
+        <strong>{data.hi_iam}</strong>
+        <h1>{data.name}</h1>
+        <span>{data.career}</span>
         <div>
-          <a
-            href="/files/nivaldo-andrade.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            // download
-          >
+          <a href={data.cv_pdf} target="_blank" rel="noopener noreferrer">
             Download CV
           </a>
           <Link href="about" to="about" smooth offset={50}>
@@ -48,75 +43,14 @@ export function Into() {
         </div>
       </motion.div>
       <div className={styles.imgContainer}>
-        <motion.div
-          className={`${styles.box} ${styles.react}`}
-          initial={{
-            x: -20,
-            y: -10,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            y: 0,
-            opacity: 1,
-          }}
-          transition={transitionBox}
-        >
-          <Image src={reactImg} alt="React" width={30} height={30} />
-          ReactJS
-        </motion.div>
-        <motion.div
-          className={`${styles.box} ${styles.javascript}`}
-          initial={{
-            x: 20,
-            y: -10,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            y: 0,
-            opacity: 1,
-          }}
-          transition={transitionBox}
-        >
-          <Image src={javascriptImg} alt="React" width={30} height={30} />
-          JavaScript
-        </motion.div>
-        <motion.div
-          className={`${styles.box} ${styles.html}`}
-          initial={{
-            x: -20,
-            y: 10,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            y: 0,
-            opacity: 1,
-          }}
-          transition={transitionBox}
-        >
-          <Image src={htmlImg} alt="React" width={35} height={35} />
-          HTML
-        </motion.div>
-        <motion.div
-          className={`${styles.box} ${styles.css}`}
-          initial={{
-            x: 20,
-            y: 10,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            y: 0,
-            opacity: 1,
-          }}
-          transition={transitionBox}
-        >
-          <Image src={cssImg} alt="React" width={35} height={35} />
-          CSS3
-        </motion.div>
-
+        {data.techs.map(tech => (
+          <CardTech
+            key={tech.name}
+            name={tech.name}
+            position={tech.position}
+            imgUrl={tech.imgUrl}
+          />
+        ))}
         <motion.div
           className={styles.imgContent}
           initial={{ opacity: 0 }}
@@ -128,9 +62,9 @@ export function Into() {
           }}
         >
           <Image
-            src={meImg}
+            src={data.avatar_url}
             layout="fill"
-            alt="Nivaldo Andrade"
+            alt={`Avatar 3D do ${data.name}`}
             objectFit="cover"
             priority
           />
