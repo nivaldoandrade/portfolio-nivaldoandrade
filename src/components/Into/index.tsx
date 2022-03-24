@@ -2,16 +2,11 @@ import Image from 'next/image';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 
+import { CardTech } from './CardTech';
+
 import { IntoComponentProps } from '../../types/prismic';
 
-import meImg from '../../../public/images/me.png';
-import reactImg from '../../../public/images/react.svg';
-import javascriptImg from '../../../public/images/javascript.svg';
-import htmlImg from '../../../public/images/html.svg';
-import cssImg from '../../../public/images/css3.svg';
-
 import styles from './styles.module.scss';
-import { CardTech } from './CardTech';
 
 interface IntoProps {
   data: IntoComponentProps;
