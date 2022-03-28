@@ -13,6 +13,8 @@ import {
   IntoComponentProps,
   AboutComponentProps,
   PortfolioComponentProps,
+  ContactComponentProps,
+  FooterComponentProps,
 } from '../types/prismic';
 
 import styles from '../styles/Home.module.scss';
@@ -21,12 +23,16 @@ interface HomeProps {
   intoComponent: IntoComponentProps;
   aboutComponent: AboutComponentProps;
   portfolioComponent: PortfolioComponentProps;
+  contactComponent: ContactComponentProps;
+  footerComponent: FooterComponentProps;
 }
 
 export default function Home({
   intoComponent,
   aboutComponent,
   portfolioComponent,
+  contactComponent,
+  footerComponent,
 }: HomeProps) {
   return (
     <>
@@ -35,9 +41,9 @@ export default function Home({
         <Into data={intoComponent} />
         <About data={aboutComponent} />
         <Portfolio data={portfolioComponent} />
-        <Contact />
+        <Contact data={contactComponent} />
       </main>
-      <Footer />
+      <Footer data={footerComponent} />
     </>
   );
 }
@@ -66,6 +72,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const getPortfolio = await client.getAllByType('portfolio', {
     orderings: ['document.first_publication_date desc'],
   });
+
+  const { data: dataContact } = await client.getSingle('section_contact');
+
+  const { data: dataFooter } = await client.getSingle('section_footer');
 
   const intoComponent = {
     hi_iam: PrismicDom.RichText.asText(dataInto.hi_iam),
@@ -102,11 +112,29 @@ export const getStaticProps: GetStaticProps = async () => {
     github: project.data.link_github.url ?? '',
   }));
 
+  const contactComponent = dataContact.cards.map(card => ({
+    title: PrismicDom.RichText.asText(card.title),
+    subtitle: PrismicDom.RichText.asText(card.subtitle),
+    link: PrismicDom.RichText.asText(card.link),
+  }));
+
+  const footerComponent = {
+    title: PrismicDom.RichText.asText(dataFooter.title),
+    subtitle: PrismicDom.RichText.asText(dataFooter.subtitle),
+    socialmedia: dataFooter.socialmedia.map(item => ({
+      name: PrismicDom.RichText.asText(item.name),
+      link: item.link.url,
+    })),
+  };
+
   return {
     props: {
       intoComponent,
       aboutComponent,
       portfolioComponent,
+      contactComponent,
+      footerComponent,
     },
+    revalidate: 60 * 60 * 24, // 1 day
   };
 };

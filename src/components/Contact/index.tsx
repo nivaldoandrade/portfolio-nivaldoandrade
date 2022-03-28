@@ -1,4 +1,4 @@
-import { FormEvent, useCallback, useState } from 'react';
+import { FormEvent, useCallback, useMemo, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { BiMailSend } from 'react-icons/bi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -6,13 +6,41 @@ import { BsLinkedin } from 'react-icons/bs';
 
 import { Card } from './Card';
 
+import { ContactComponentProps } from '../../types/prismic';
+
 import styles from './styles.module.scss';
 
-export function Contact() {
+const cardProps = {
+  icon: {
+    LinkedIn: BsLinkedin,
+    WhatsApp: FaWhatsapp,
+    Email: BiMailSend,
+  },
+  link: {
+    Email: 'mailto:',
+    WhatsApp: 'https://wa.me/',
+  },
+};
+
+interface ContactProps {
+  data: ContactComponentProps;
+}
+
+export function Contact({ data: cards }: ContactProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [formSubmitted, setFormSubmitted] = useState({ title: '' });
+
+  const cardsFormatted = useMemo(() => {
+    return cards.map(card => ({
+      ...card,
+      icon: cardProps.icon[card.title] ?? '',
+      link: cardProps.link[card.title]
+        ? `${cardProps.link[card.title]}${card.link}`
+        : card.link,
+    }));
+  }, [cards]);
 
   const handleSubmit = useCallback(
     (e: FormEvent) => {
@@ -59,24 +87,15 @@ export function Contact() {
       <div className={styles.contactContent}>
         <div className={styles.talkToMeContent}>
           <h2>Diga Olá</h2>
-          <Card
-            title="Email"
-            subtitle="nivaldoandradef@gmail.com"
-            icon={BiMailSend}
-            link="mailto:nivaldoandradef@gmail.com"
-          />
-          <Card
-            title="Whatsapp"
-            subtitle="+55 11 98478 4784"
-            icon={FaWhatsapp}
-            link="tel:+5511984784284"
-          />
-          <Card
-            title="LinkedIn"
-            subtitle="nivaldo-andrade"
-            icon={BsLinkedin}
-            link="https://www.linkedin.com/in/nivaldo-andrade/"
-          />
+          {cardsFormatted.map(card => (
+            <Card
+              key={card.title}
+              title={card.title}
+              subtitle={card.subtitle}
+              icon={card.icon}
+              link={card.link}
+            />
+          ))}
         </div>
         <div className={styles.formContent}>
           <h2>Fale Comigo</h2>

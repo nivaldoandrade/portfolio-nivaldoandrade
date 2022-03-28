@@ -1,24 +1,42 @@
-import Link from 'next/link';
+import { useMemo } from 'react';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
+import { IconType } from 'react-icons';
+
+import { FooterComponentProps } from '../../types/prismic';
 
 import styles from './styles.module.scss';
+import { SocialMediaItem } from './SocialMediaItem/indesx';
 
-export function Footer() {
+const socialMediaProps = {
+  Linkedin: BsLinkedin,
+  Github: BsGithub,
+};
+
+interface FooterProps {
+  data: FooterComponentProps;
+}
+
+export function Footer({ data }: FooterProps) {
+  const socialMediaFormatted = useMemo(() => {
+    return data.socialmedia.map(social => ({
+      ...social,
+      icon: socialMediaProps[social.name] as IconType,
+    }));
+  }, [data.socialmedia]);
+
   return (
     <div className={styles.footerContainer}>
-      <strong>Nivaldo Andrade</strong>
-      <span>Um pequeno aprendiz nesse grande mundo da programação!!</span>
+      <strong>{data.title}</strong>
+      <span>{data.subtitle}</span>
       <div className={styles.socialMediaContent}>
-        <Link href="https://www.linkedin.com/in/nivaldo-andrade/">
-          <a target="_blank" aria-label="Linkedin">
-            <BsLinkedin size={20} />
-          </a>
-        </Link>
-        <Link href="https://github.com/nivaldoandrade">
-          <a target="_blank" aria-label="Github">
-            <BsGithub size={20} />
-          </a>
-        </Link>
+        {socialMediaFormatted.map(social => (
+          <SocialMediaItem
+            key={social.name}
+            name={social.name}
+            link={social.link}
+            icon={social.icon}
+          />
+        ))}
       </div>
     </div>
   );

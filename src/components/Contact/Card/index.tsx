@@ -1,13 +1,11 @@
 import { IconType } from 'react-icons';
+import { CardContactProps } from '../../../types/prismic';
 import { LinkArrow } from '../../LinkArrow';
 
 import styles from './styles.module.scss';
 
-interface CardProps {
-  title: string;
+interface CardProps extends CardContactProps {
   icon: IconType;
-  subtitle: string;
-  link: string;
 }
 
 export function Card({ title, icon: Icon, subtitle, link }: CardProps) {
@@ -16,7 +14,7 @@ export function Card({ title, icon: Icon, subtitle, link }: CardProps) {
       <Icon size={36} />
       <strong>{title}</strong>
       <span>{subtitle}</span>
-      <LinkArrow link={link}>Contato-me</LinkArrow>
+      <LinkArrow link={link}>Contate-me</LinkArrow>
     </div>
   );
 }
