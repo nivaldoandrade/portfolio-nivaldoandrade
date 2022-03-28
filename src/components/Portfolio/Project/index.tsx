@@ -4,16 +4,9 @@ import { BsGithub } from 'react-icons/bs';
 
 import { LinkArrow } from '../../LinkArrow';
 
-import styles from './styles.module.scss';
+import { ProjectProps } from '../../../types/prismic';
 
-interface ProjectProps {
-  image: StaticImageData;
-  title: string;
-  subtitle: string;
-  tech: string;
-  link: string;
-  github?: string;
-}
+import styles from './styles.module.scss';
 
 export function Project({
   title,

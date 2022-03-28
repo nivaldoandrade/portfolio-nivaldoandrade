@@ -9,23 +9,32 @@ import { NavBar } from '../components/NavBar';
 import { Portfolio } from '../components/Portfolio';
 import { client } from '../services/prismic';
 
-import { IntoComponentProps, AboutComponentProps } from '../types/prismic';
+import {
+  IntoComponentProps,
+  AboutComponentProps,
+  PortfolioComponentProps,
+} from '../types/prismic';
 
 import styles from '../styles/Home.module.scss';
 
 interface HomeProps {
   intoComponent: IntoComponentProps;
   aboutComponent: AboutComponentProps;
+  portfolioComponent: PortfolioComponentProps;
 }
 
-export default function Home({ intoComponent, aboutComponent }: HomeProps) {
+export default function Home({
+  intoComponent,
+  aboutComponent,
+  portfolioComponent,
+}: HomeProps) {
   return (
     <>
       <NavBar />
       <main className={styles.mainContainer}>
         <Into data={intoComponent} />
         <About data={aboutComponent} />
-        <Portfolio />
+        <Portfolio data={portfolioComponent} />
         <Contact />
       </main>
       <Footer />
@@ -54,6 +63,10 @@ export const getStaticProps: GetStaticProps = async () => {
     ],
   });
 
+  const getPortfolio = await client.getAllByType('portfolio', {
+    orderings: ['document.first_publication_date desc'],
+  });
+
   const intoComponent = {
     hi_iam: PrismicDom.RichText.asText(dataInto.hi_iam),
     name: PrismicDom.RichText.asText(dataInto.name),
@@ -80,33 +93,20 @@ export const getStaticProps: GetStaticProps = async () => {
     })),
   };
 
+  const portfolioComponent = getPortfolio.map(project => ({
+    title: PrismicDom.RichText.asText(project.data.title),
+    subtitle: PrismicDom.RichText.asText(project.data.subtitle),
+    image: project.data.image.url,
+    tech: PrismicDom.RichText.asText(project.data.tech),
+    link: project.data.link_demo.url,
+    github: project.data.link_github.url ?? '',
+  }));
+
   return {
     props: {
       intoComponent,
       aboutComponent,
+      portfolioComponent,
     },
   };
 };
-
-// const getInto = await client.getByType('section_into', {
-//   fetch: [
-//     'data.hi_iam',
-//     'data.name',
-//     'data.career',
-//     'data.avatar',
-//     'data.cv_pdf',
-//   ],
-// });
-
-// const intoComponent = getInto.results.map(item => ({
-//   hi_iam: PrismicDom.RichText.asText(item.data.hi_iam),
-//   name: PrismicDom.RichText.asText(item.data.name),
-//   career: PrismicDom.RichText.asText(item.data.career),
-//   avatar_url: item.data.avatar.url,
-//   cv_pdf: item.data.cv_pdf.url,
-//   techs: item.data.techs.map(tech => ({
-//     name: PrismicDom.RichText.asText(tech.tech_name),
-//     imgUrl: tech.tech_logo.url,
-//     position: tech.position_select_tech,
-//   })),
-// }))[0];

@@ -14,6 +14,8 @@ export interface AboutComponentProps {
   skills: SkillProps[];
 }
 
+export type PortfolioComponentProps = ProjectProps[];
+
 export interface TechProps {
   name: string;
   imgUrl: string;
@@ -27,4 +29,13 @@ export interface CardAboutComponentPros {
 export interface SkillProps {
   title: string;
   percentage: number;
+}
+
+export interface ProjectProps {
+  image: StaticImageData;
+  title: string;
+  subtitle: string;
+  tech: string;
+  link: string;
+  github?: string;
 }
