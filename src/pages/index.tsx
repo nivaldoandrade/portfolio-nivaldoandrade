@@ -135,6 +135,5 @@ export const getStaticProps: GetStaticProps = async () => {
       contactComponent,
       footerComponent,
     },
-    revalidate: 60 * 60 * 24, // 1 day
   };
 };
