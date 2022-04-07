@@ -111,8 +111,7 @@
   }
 }
 
-@media (orientation: landscape)
-and (max-device-height: 600px) {
+@media (orientation: landscape) and (max-device-width: 768px){
   .intoContainer {
     justify-content: center !important;
   }
@@ -122,5 +121,4 @@ and (max-device-height: 600px) {
     visibility: hidden;
   }
 }
-
 
