@@ -19,11 +19,11 @@ export default class MyDocumento extends Document {
           <meta charSet="UTF-8" />
           <meta
             name="description"
-            content="Nivaldo Andrade é desenvolvedor front end com foco na stack javascript/typescript, principalmente com ReactJS e Next.js. Portfólio para exibição dos projetos"
+            content="Eu sou Nivaldo Andrade, desenvolvedor front-end e back-end, com experiência em criar interfaces de usuário utilizando React, Next.js, JavaScript e TypeScript, sempre priorizando responsividade e usabilidade. No back-end, desenvolvo APIs robustas e seguras com Java, Spring Boot, Node.js e PostgreSQL"
           />
           <meta
             name="keywords"
-            content="desenvolvedor, front end, react.js, reactjs, next.js,react native,nodejs, javascript, typescript, html, css, web development, learn web development, front end development"
+            content="desenvolvedor, front end, react.js, reactjs, next.js, react native, nodejs, javascript, typescript, html, css, web development, learn web development, front end development, back end, back end development, frontend, backend, java, spring, spring boot, sao caetano do sul, sao paulo"
           />
           <meta
             name="author"
