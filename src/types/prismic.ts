@@ -11,7 +11,7 @@ export interface AboutComponentProps {
   text: string;
   slogan: string;
   cards: CardAboutComponentPros[];
-  skills: SkillProps[];
+  hardSkills: HardSkillItemProps[];
 }
 
 export type PortfolioComponentProps = ProjectProps[];
@@ -34,9 +34,11 @@ export interface CardAboutComponentPros {
   name: string;
   link: string;
 }
-export interface SkillProps {
+
+export interface HardSkillItemProps {
+  src: string;
   title: string;
-  percentage: number;
+  category: ['frontend' | 'backend' | 'mobile'];
 }
 
 export interface ProjectProps {

@@ -1,0 +1,21 @@
+.hardSkillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--container-color);
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+
+  &:hover {
+    border-color: var(--blue);
+  }
+
+  span {
+    font-size: 0.875rem;
+  }
+}

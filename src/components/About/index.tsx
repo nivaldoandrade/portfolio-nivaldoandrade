@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { IconType } from 'react-icons';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 import { Card } from './Card';
-import { SkillItem } from './SkillItem';
 
 import { AboutComponentProps } from '../../types/prismic';
 
+import { HardSkills } from './HardSkills';
 import styles from './styles.module.scss';
 
 interface AboutProps {
@@ -47,15 +47,7 @@ export function About({ data }: AboutProps) {
             <strong>{data.slogan}</strong>
           </div>
         </div>
-        <div className={styles.skillContainer}>
-          {data.skills.map(skill => (
-            <SkillItem
-              key={skill.title}
-              title={skill.title}
-              percentage={skill.percentage}
-            />
-          ))}
-        </div>
+        <HardSkills skills={data.hardSkills} />
       </div>
     </section>
   );

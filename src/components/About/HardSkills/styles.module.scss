@@ -1,0 +1,55 @@
+.skillContent {
+  > h2 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}
+
+.filterButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  button {
+    background-color: var(--container-color);
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &.activeFilter {
+      background-color: var(--purple);
+      color: var(--background-color);
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem;
+
+  max-height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .filterButtons {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}

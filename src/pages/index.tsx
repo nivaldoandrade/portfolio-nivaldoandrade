@@ -10,11 +10,11 @@ import { Portfolio } from '../components/Portfolio';
 import { client } from '../services/prismic';
 
 import {
-  IntoComponentProps,
   AboutComponentProps,
-  PortfolioComponentProps,
   ContactComponentProps,
   FooterComponentProps,
+  IntoComponentProps,
+  PortfolioComponentProps,
 } from '../types/prismic';
 
 import styles from '../styles/Home.module.scss';
@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps = async () => {
       'section_about.text',
       'section_about.slogan',
       'section_about.cards_socialmedia',
-      'section_about.skills',
+      'section_about.hardskill',
     ],
   });
 
@@ -97,9 +97,10 @@ export const getStaticProps: GetStaticProps = async () => {
       name: card.card_name,
       link: card.card_link.url,
     })),
-    skills: dataAbout.skills.map(skill => ({
-      title: PrismicDom.RichText.asText(skill.skill_title),
-      percentage: skill.skill_percentage,
+    hardSkills: dataAbout.hardskill.map(skill => ({
+      src: skill.hardskill_img.url,
+      title: PrismicDom.RichText.asText(skill.hardskill_name),
+      category: PrismicDom.RichText.asText(skill.hardskill_category).split(','),
     })),
   };
 

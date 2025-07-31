@@ -1,18 +1,19 @@
 .aboutContainer {
   // margin: 5rem 0;
 
-  h1, span {
+  > h1,
+  span {
     text-align: center;
   }
 
-  h1 {
+  > h1 {
     font-size: 2rem;
     font-weight: 600;
     color: var(--purple);
     margin-bottom: 6rem;
   }
 
-  span {
+  > span {
     display: block;
     color: var(--text-color-light);
   }
@@ -50,7 +51,6 @@
   }
 }
 
-
 @media (max-width: 669px) {
   .infoContainer {
     gap: 2rem;
@@ -60,14 +60,10 @@
     text-align: center;
   }
 
-
   .aboutContent {
     gap: 5rem;
   }
 }
 
 @media (max-width: 375px) {
-
 }
-
-
