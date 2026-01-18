@@ -1,5 +1,5 @@
 .intoContainer {
-  height: 100vh;
+  min-height: 100svh;
 
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 4rem;
+  padding-top: 1rem;
 
   h1 {
     font-size: 3rem;
@@ -84,7 +85,6 @@
 
   .imgContent {
     width: 22rem;
-    // height: 22rem;
   }
 }
 
@@ -97,21 +97,18 @@
 
   .imgContent {
     width: 21rem;
-    // height: 21rem;
   }
 }
 
-@media (max-height: 568px) {
+@media (max-height: 768px) {
   .info {
     margin-bottom: 2rem;
   }
 
-  .imgContent {
-    height: 19rem;
-  }
+
 }
 
-@media (orientation: landscape) and (max-device-width: 768px){
+@media (orientation: landscape) and (max-height: 553px) {
   .intoContainer {
     justify-content: center !important;
   }

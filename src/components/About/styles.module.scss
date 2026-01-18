@@ -1,5 +1,4 @@
 .aboutContainer {
-  // margin: 5rem 0;
 
   > h1,
   span {
@@ -21,7 +20,7 @@
 
 .aboutContent {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 3rem;
 }
 
@@ -51,13 +50,9 @@
   }
 }
 
-@media (max-width: 669px) {
-  .infoContainer {
+@media (max-width: 768px) {
+  .infoContainer  {
     gap: 2rem;
-  }
-
-  .info {
-    text-align: center;
   }
 
   .aboutContent {
@@ -65,5 +60,3 @@
   }
 }
 
-@media (max-width: 375px) {
-}
